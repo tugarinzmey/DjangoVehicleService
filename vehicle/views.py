@@ -567,9 +567,3 @@ def mechanic_salary_view(request):
     mechanic=models.Mechanic.objects.get(user_id=request.user.id)
     workdone=models.Request.objects.all().filter(mechanic_id=mechanic.id).filter(Q(status="Ремонт завершен") | Q(status="Готово!"))
     return render(request,'vehicle/mechanic_salary.html',{'workdone':workdone,'mechanic':mechanic})
-
-@login_required(login_url='login')
-@user_passes_test(is_mechanic)
-def mechanic_profile_view(request):
-    mechanic=models.Mechanic.objects.get(user_id=request.user.id)
-    return render(request,'vehicle/mechanic_profile.html',{'mechanic':mechanic})
