@@ -1,0 +1,29 @@
+{% extends "vehicle/base.html" %}
+<!DOCTYPE html>
+{% load widget_tweaks %}
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+</head>
+
+<body>
+    {% block content %}
+    <div class="form-page">
+        <div class="form">
+            <h1>Войдите, чтобы продолжить</h1>
+            <form class="login-form" method="post">
+                {% csrf_token %}
+                {% render_field form.username class="form-input" placeholder="Имя пользователя" %}
+                {% render_field form.password class="form-input" placeholder="Пароль" %}
+
+                <input class="submit-button" type="submit" name="" value="Войти">
+            </form>
+        </div>
+    </div>
+
+
+    {% endblock content %}
+</body>
+
+</html>

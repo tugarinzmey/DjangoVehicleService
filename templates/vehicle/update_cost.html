@@ -1,0 +1,22 @@
+{% extends 'vehicle/adminbase.html' %}
+{% load widget_tweaks %}
+{% block content %}
+
+<head>
+</head>
+
+
+<div class="form-page">
+  <form class="form" method="post" style="margin-left:200px;margin-right:200px;">
+    <h3 style="text-align:center;">Изменение стоимости заявки</h3>
+    {% csrf_token %}
+
+    <label for="cost">Стоимость</label>
+    {% render_field updateCostForm.cost class="form-input" placeholder="1000" %}
+
+    <input class="submit-button"type="submit" value="Изменить">
+  </form>
+</div>
+
+
+{% endblock content %}

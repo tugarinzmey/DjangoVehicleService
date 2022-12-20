@@ -1,0 +1,40 @@
+{% extends 'vehicle/customerbase.html' %}
+{% block content %}
+
+
+
+<div class="row">
+	<div class="col-12 col-m-12 col-sm-12">
+		<h3 style="font-size: 28px; text-align:center">Заявки в процессе обработки</h3>
+		<div class="card-content">
+			<table>
+				<thead>
+					<tr>
+						<th>Машина</th>
+						<th>Номер</th>
+						<th>Описание проблемы</th>
+						<th>Дата подачи</th>
+						<th>Статус</th>
+						<th>Удалить заявку</th>
+					</tr>
+				</thead>
+				<tbody>
+					{% for enq in enquiries %}
+					<tr>
+						<td>{{enq.vehicle_name}}</td>
+						<td>{{enq.vehicle_no}}</td>
+						<td>{{enq.problem_description}}</td>
+						<td>{{enq.date}}</td>
+						<td>{{enq.status}}</td>
+						<td><a style="color:blue; text-decoration:none;font-size:25px;"
+								href="{% url 'customer-delete-request' enq.id  %}">&#10008;</a></td>
+					</tr>
+					{% endfor %}
+
+				</tbody>
+			</table>
+		</div>
+	</div>
+</div>
+
+{% endblock content %}

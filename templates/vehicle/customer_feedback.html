@@ -1,0 +1,23 @@
+{% extends 'vehicle/customerbase.html' %}
+{% load widget_tweaks %}
+{% block content %}
+<head>
+</head>
+<body>
+  <div class="form-page">
+    <form class="form" method="post" style="margin-left:200px;margin-right:200px;">
+      <h3 style="text-align:center;">Оставьте свой отзыв о нашей работе</h3>
+      {% csrf_token %}
+
+      <label for="by">Ваше имя</label>
+      {% render_field feedback.by class="form-input" %}
+
+      <label for="message">Отзыв</label>
+      {% render_field feedback.message class="big-form-input" %}
+
+      <input class="submit-button" type="submit" value="Отправить">
+    </form>
+  </div>
+
+  {% endblock content %}
+</body>

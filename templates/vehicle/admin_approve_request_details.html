@@ -1,0 +1,27 @@
+{% extends 'vehicle/adminbase.html' %}
+{% load widget_tweaks %}
+{% block content %}
+
+<head>
+</head>
+
+
+<div class="form-page">
+  <form class="form" method="post" style="margin-left:200px;margin-right:200px;">
+    <h3 style="text-align:center;">Подтверждение заявок</h3>
+    {% csrf_token %}
+
+    <label for="cost">Стоимость</label>
+    {% render_field adminenquiry.cost class="form-input" placeholder="1000" %}
+
+    <label for="mechanic">Назначить работника</label>
+    {% render_field adminenquiry.mechanic class="form-input" %}
+
+    <label for="status">Статус</label>
+    {% render_field adminenquiry.status class="form-input" %}
+
+    <input class="submit-button" type="submit" value="Подтвердить">
+  </form>
+</div>
+
+{% endblock content %}

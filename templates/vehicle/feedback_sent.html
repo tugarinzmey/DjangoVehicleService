@@ -1,0 +1,23 @@
+{% extends 'vehicle/mechanicbase.html' %}
+{% load static %}
+
+{% block content %}
+<style media="screen">
+  .success-page {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .success-button {
+    color: green;
+    font-size: 28px;
+    margin: 10px;
+  }
+</style>
+<div class="success-page">
+  <h2>Успешно отправлено!</h2>
+  <a class="success-button" href="/mechanic-feedback">Отправить еще</a>
+  <a class="success-button" href="/mechanic-dashboard">На главную</a>
+</div>
+{% endblock content %}

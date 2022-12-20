@@ -1,0 +1,22 @@
+{% extends 'vehicle/adminbase.html' %}
+{% load widget_tweaks %}
+{% block content %}
+
+<head>
+</head>
+
+
+<div class="form-page">
+  <form class="form" method="post">
+    <h3 style="text-align:center;">Изменение зарплаты</h3>
+    {% csrf_token %}
+
+    <label for="salary">Зарплата</label>
+    {% render_field mechanicSalary.salary class="form-input" placeholder="10000" %}
+
+
+    <input class="submit-button" type="submit" value="Изменить">
+  </form>
+</div>
+
+{% endblock content %}

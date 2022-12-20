@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <style>
+    .login-root{
+        display: flex;
+        justify-content: center;
+    }
+
+    .button-login-reg{
+        display: flex;
+        height: 50px;
+        width: 25vw;
+        background-color: rgb(172, 172, 172);
+        border-radius: 100px;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        transition: 300ms;
+        margin-bottom: 5vh;
+    }
+
+    .button-login-reg:hover{
+        background-color: lightgrey;
+    }
+
+    .button-container{
+        margin-top: 2vh;
+        display: flex;
+        justify-content: space-around;
+    }
+
+    .hyperlink-login-reg{
+        height: 100%;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-decoration: none;
+        color: black;
+    }
+
+  </style>
+</head>
+
+<body>
+    <div class="login-root">
+        <h1>Чтобы продолжить</h1>
+    </div>
+    <div class="button-container">
+        <div class="button-login-reg">
+            <a href="/login" class="hyperlink-login-reg">
+                <div class="hyperlink-text">Войдите</div>
+            </a>
+        </div>
+
+        <div class="button-login-reg">
+            <a href="/mechanicsignup" class="hyperlink-login-reg">
+                <div class="hyperlink-text">Устройтесь к нам</div>
+            </a>
+        </div>
+        
+    </div>
+</body>
+
+</html>

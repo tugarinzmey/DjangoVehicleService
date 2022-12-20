@@ -1,0 +1,39 @@
+{% extends 'vehicle/adminbase.html' %}
+{% block content %}
+
+<div class="row">
+	<div class="col-12 col-m-12 col-sm-12">
+		<div class="card-header">
+			<h3 style="font-size: 28px; text-align:center">Стоимость заявок
+			</h3>
+
+		</div>
+		<div class="card-content">
+			<table>
+				<thead>
+					<tr>
+						<th>Имя клиента</th>
+						<th>Машина</th>
+						<th>Описание проблемы</th>
+						<th>Стоимость</th>
+						<th>Изменить стоимость</th>
+					</tr>
+				</thead>
+				<tbody>
+					{% for c,r in data %}
+					<tr>
+						<td> {{c.get_name}}</td>
+						<td> {{r.vehicle_name}}</td>
+						<td>{{r.problem_description}}</td>
+						<td>{{r.cost}}</td>
+						<td><a style="color:blue; text-decoration:none;font-size:25px;"
+								href="{% url 'update-cost' r.id  %}">&#9998;</a></td>
+					</tr>
+					{% endfor %}
+
+				</tbody>
+			</table>
+		</div>
+	</div>
+</div>
+{% endblock content %}

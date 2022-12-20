@@ -1,0 +1,22 @@
+{% extends 'vehicle/mechanicbase.html' %}
+{% load widget_tweaks %}
+{% block content %}
+
+<head>
+</head>
+
+
+<div class="form-page">
+  <form class="form" method="post" style="margin-left:200px;margin-right:200px;">
+    <h3 style="text-align:center;">Изменение статуса заявки</h3>
+    {% csrf_token %}
+
+    <label for="salary">Статус</label>
+    {% render_field updateStatus.status class="form-input" %}
+
+
+    <input class="submit-button" type="submit" value="Изменить">
+  </form>
+</div>
+
+{% endblock content %}

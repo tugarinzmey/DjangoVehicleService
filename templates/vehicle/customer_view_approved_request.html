@@ -1,0 +1,40 @@
+{% extends 'vehicle/customerbase.html' %}
+{% block content %}
+
+<div class="row">
+	<div class="col-12 col-m-12 col-sm-12">
+		<div class="card-header">
+			<h3 style="font-size: 28px; text-align:center">Подтвержденные заявки
+			</h3>
+		</div>
+		<div class="card-content">
+			<table>
+				<thead>
+					<tr>
+						<th>Машина</th>
+						<th>Номер</th>
+						<th>Описание проблемы</th>
+						<th>Дата</th>
+						<th>Статус</th>
+
+					</tr>
+				</thead>
+				<tbody>
+					{% for enq in enquiries %}
+					<tr>
+						<td>{{enq.vehicle_name}}</td>
+						<td>{{enq.vehicle_no}}</td>
+						<td>{{enq.problem_description}}</td>
+						<td>{{enq.date}}</td>
+						<td>{{enq.status}}</td>
+
+					</tr>
+					{% endfor %}
+
+				</tbody>
+			</table>
+		</div>
+	</div>
+</div>
+
+{% endblock content %}

@@ -1,0 +1,27 @@
+{% extends 'vehicle/customerbase.html' %}
+{% load static %}
+{% block content %}
+
+<body>
+	<div class="statistic-cards-container">
+		<div class="statistic-card-root">
+			<a class="statistic-card" href="customer-request">
+				<h3>{{new_request_made}}</h3>
+				<p>Заявок создано</p>
+			</a>
+		</div>
+		<div class="statistic-card-root">
+			<a class="statistic-card" href="customer-request">
+				<h3>{{work_in_progress}}</h3>
+				<p>Заявок, над которыми мы работаем</p>
+			</a>
+		</div>
+		<div class="statistic-card-root">
+			<a class="statistic-card" href="customer-request">
+				<h3>{{work_completed}}</h3>
+				<p>Ваших заявок выполнено</p>
+			</a>
+		</div>
+	</div>
+</body>
+{% endblock content %}

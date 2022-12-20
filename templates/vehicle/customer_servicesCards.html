@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+{% load static %}
+<!-- <img src="{% static "images/admin.png" %}" alt="John" style="width:100%">
+<img src="{% static "images/mechanic.png" %}" alt="John" style="width:100%"> -->
+<html>
+
+<head>
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Roboto+Slab:100,300,400,700');
+        @import url('https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i');
+
+        * {
+            box-sizing: border-box;
+        }
+
+        section {
+            text-decoration: none;
+        }
+
+        .cards {
+            margin-bottom: 8vh;
+            width: 100%;
+            display: flex;
+            display: -webkit-flex;
+            justify-content: center;
+            -webkit-justify-content: center;
+        }
+
+        .card--1 .card__img,
+        .card--1 .card__img--hover {
+            background-image: url('https://a.d-cd.net/310144ds-960.jpg');
+        }
+
+        .card--2 .card__img,
+        .card--2 .card__img--hover {
+            background-image: url('https://dikonauto.ru/images/is/9/6EC0565D3C7EDF44DDD1A7A41B666B21/C7A17E5F64D2AD7BF61025B39AA078B4.jpg');
+        }
+
+        .card--3 .card__img,
+        .card--3 .card__img--hover {
+            background-image: url('https://s0.rbk.ru/v6_top_pics/media/img/7/13/756488033225137.jpg');
+        }
+
+        .card--4 .card__img,
+        .card--4 .card__img--hover {
+            background-image: url('https://koreanaparts.ru/sites/default/files/autoservice/remont_akpp.jpg');
+        }
+
+        .card__like {
+            width: 18px;
+        }
+
+        .card__clock {
+            width: 15px;
+            vertical-align: middle;
+            fill: #AD7D52;
+        }
+
+        .card__time {
+            font-size: 12px;
+            color: #AD7D52;
+            vertical-align: middle;
+            margin-left: 5px;
+        }
+
+        .card__clock-info {
+            float: right;
+        }
+
+        .card__img {
+            visibility: hidden;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            width: 100%;
+            height: 235px;
+            border-top-left-radius: 12px;
+            border-top-right-radius: 12px;
+
+        }
+
+        .card__info-hover {
+            position: absolute;
+            padding: 16px;
+            width: 100%;
+            opacity: 0;
+            top: 0;
+        }
+
+        .card__img--hover {
+            transition: 0.2s all ease-out;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            width: 100%;
+            position: absolute;
+            height: 235px;
+            border-top-left-radius: 12px;
+            border-top-right-radius: 12px;
+            top: 0;
+
+        }
+
+        .card {
+            margin-right: 40px;
+            transition: all .4s cubic-bezier(0.175, 0.885, 0, 1);
+            background-color: #fff;
+            width: 33.3%;
+            position: relative;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0px 13px 10px -7px rgba(0, 0, 0, 0.1);
+            margin-left: 2vw;
+        }
+
+        .card:hover {
+            box-shadow: 0px 30px 18px -8px rgba(0, 0, 0, 0.1);
+            transform: scale(1.10, 1.10);
+        }
+
+        .card__info {
+            z-index: 2;
+            background-color: #fff;
+            border-bottom-left-radius: 12px;
+            border-bottom-right-radius: 12px;
+            padding: 16px 24px 24px 24px;
+        }
+
+        .card__category {
+            font-family: 'Raleway', sans-serif;
+            text-transform: uppercase;
+            font-size: 13px;
+            letter-spacing: 2px;
+            font-weight: 500;
+            color: #868686;
+        }
+
+        .card__title {
+            margin-top: 5px;
+            margin-bottom: 10px;
+            font-family: 'Roboto Slab', serif;
+        }
+
+        .card__by {
+            font-size: 12px;
+            font-family: 'Raleway', sans-serif;
+            font-weight: 500;
+        }
+
+        .card__author {
+            font-weight: 600;
+            text-decoration: none;
+            color: #AD7D52;
+        }
+
+        .card:hover .card__img--hover {
+            height: 100%;
+            opacity: 0.3;
+        }
+
+        .card:hover .card__info {
+            background-color: transparent;
+            position: relative;
+        }
+
+        .card:hover .card__info-hover {
+            opacity: 1;
+        }
+
+        .services-header {
+            margin-left: 2vw;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 class="services-header">Наши услуги:</h1>
+
+
+    <section class="cards">
+        <article class="card card--1">
+
+            <div class="card__img"></div>
+            <a class="card_link">
+                <div class="card__img--hover"></div>
+            </a>
+            <div class="card__info">
+                <h3 class="card__title">Автосервис</h3>
+                <span class="card__by">Проверка и ремонт ходовой части автомобиля.
+                    Замена масла в двигателе.
+                    Замена тормозных колодок.
+                    Кузовной ремонт автомобиля, покраска автомобиля.
+                    Развал-схождение колес автомобиля.</span>
+            </div>
+        </article>
+
+
+        <article class="card card--2">
+
+            <div class="card__img"></div>
+            <a class="card_link">
+                <div class="card__img--hover"></div>
+            </a>
+            <div class="card__info">
+
+                <h3 class="card__title">Диагностика</h3>
+                <span class="card__by">Диагностика автомобилей с помощью компьютерных диагностических сканеров.
+                    Наши сканеры с точностью выявляют неисправности и сбои в работе вашего автомобиля.</span>
+            </div>
+        </article>
+
+        <article class="card card--3">
+
+            <div class="card__img"></div>
+            <a class="card_link">
+                <div class="card__img--hover"></div>
+            </a>
+            <div class="card__info">
+
+                <h3 class="card__title">Шиномонтаж</h3>
+                <span class="card__by">Шиномонтаж, балансировка, снятие и установка колес, ремонт шин, ремонт боковых порезов, 
+                    прокатка дисков, мойка колес. Самые лучшие бренды с самым долгим запасом хода.</span>
+            </div>
+        </article>
+
+        <article class="card card--4">
+
+            <div class="card__img"></div>
+            <a class="card_link">
+                <div class="card__img--hover"></div>
+            </a>
+            <div class="card__info">
+
+                <h3 class="card__title">Ремонт АККП</h3>
+                <span class="card__by">Ремонтируем даже самые сложные случаи, работаем с АККП всех известных брендов, качественно и надежно.</span>
+            </div>
+        </article>
+    </section>
+</body>
+
+</html>

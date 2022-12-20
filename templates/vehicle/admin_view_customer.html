@@ -1,0 +1,44 @@
+{% extends 'vehicle/adminbase.html' %}
+{% block content %}
+{% load static %}
+<div class="wrapper">
+
+
+	<div class="row">
+		<div class="col-12 col-m-12 col-sm-12">
+			<div class="card-header">
+				<h3 style="font-size: 28px; text-align:center">Клиенты
+				</h3>
+
+			</div>
+			<div class="card-content">
+				<table>
+					<thead>
+						<tr>
+							<th>Имя</th>
+							<th>Телефон</th>
+							<th>Адрес</th>
+							<th>Изменить</th>
+							<th>Удалить</th>
+						</tr>
+					</thead>
+					<tbody>
+						{% for c in customers %}
+						<tr>
+							<td> {{c.get_name}}</td>
+							<td>{{c.mobile}}</td>
+							<td>{{c.address}}</td>
+							<td><a style="text-decoration:none;font-size:25px;"
+									href="{% url 'update-customer' c.id  %}">&#9998;</a></td>
+							<td><a style="text-decoration:none;font-size:25px;"
+									href="{% url 'delete-customer' c.id  %}">&#10008;</a></td>
+						</tr>
+						{% endfor %}
+
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+</div>
+{% endblock content %}

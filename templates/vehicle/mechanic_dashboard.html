@@ -1,0 +1,33 @@
+{% extends 'vehicle/mechanicbase.html' %}
+{% load static %}
+{% block content %}
+
+<body>
+	<div class="statistic-cards-container">
+		<div class="statistic-card-root">
+			<a class="statistic-card" href="mechanic-work-assigned">
+				<h3>{{new_work_assigned}}</h3>
+				<p>Непросмотренных заявок</p>
+			</a>
+		</div>
+		<div class="statistic-card-root">
+			<a class="statistic-card" href="mechanic-work-assigned">
+				<h3>{{work_in_progress}}</h3>
+				<p>Заявок в работе</p>
+			</a>
+		</div>
+		<div class="statistic-card-root">
+			<a class="statistic-card" href="mechanic-salary">
+				<h3>{{work_completed}}</h3>
+				<p>Заявок выполнено</p>
+			</a>
+		</div>
+		<div class="statistic-card-root">
+			<a class="statistic-card" href="mechanic-salary">
+				<h3>{{salary}}</h3>
+				<p>Ваша зарплата</p>
+			</a>
+		</div>
+	</div>
+</body>
+{% endblock content %}

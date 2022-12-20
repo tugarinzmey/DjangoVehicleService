@@ -1,0 +1,31 @@
+{% extends 'vehicle/adminbase.html' %}
+{% load widget_tweaks %}
+{% block content %}
+<head>
+</head>
+
+
+<div class="form-page">
+  
+  <form class="form" method="post"  enctype="multipart/form-data"  style="margin-left:200px;margin-right:200px;">
+    <h3 style="text-align:center;">Создание учетной записи клиента</h3>
+      {% csrf_token %}
+
+        <label for="first_name">Имя</label>
+        {% render_field userForm.first_name class="form-input" placeholder="Иван" %}
+        <label for="last_name">Фамилия</label>
+        {% render_field userForm.last_name class="form-input" placeholder="Иванов" %}
+        <label for="mobile">Номер телефона</label>
+        {% render_field customerForm.mobile class="form-input" placeholder="89990000000" %}
+        <label for="address">Адрес</label>
+        {% render_field customerForm.address class="form-input" placeholder="Садовое кольцо 3" %}
+        <label for="username">Имя пользователя</label>
+        {% render_field userForm.username class="form-input" placeholder="ivan123" %}
+        <label for="password">Пароль</label>
+        {% render_field userForm.password class="form-input" placeholder="******" %} 
+
+    <input class="submit-button"type="submit" value="Создать">
+  </form>
+</div>
+
+{% endblock content %}

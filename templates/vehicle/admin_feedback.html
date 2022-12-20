@@ -1,0 +1,62 @@
+{% extends 'vehicle/adminbase.html' %}
+
+{% block content %}
+
+
+<head>
+    <style media="screen">
+        .alert {
+            width: 50vw;
+            height: 50px;
+            padding: 20px;
+            margin: 3px;
+        }
+
+        .closebtn {
+            margin-left: 15px;
+            color: black;
+            font-weight: bold;
+            float: right;
+            font-size: 22px;
+            line-height: 20px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .closebtn:hover {
+            color: black;
+        }
+
+        .feedback {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+
+        .alerts {
+            border:1px solid #ccc;
+            overflow: auto;
+        }
+    </style>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+</head>
+
+<body>
+    <div class="feedback">
+        <div style="text-align:center; font-size: 28px;">
+            <h2>Отзывы</h2>
+        </div>
+
+        <div class="alerts">
+            {%for f in feedback%}
+            <div class="alert">
+                <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+                <strong>{{f.date}} ||By :{{f.by}} </strong> {{f.message}}
+            </div>
+            {%endfor%}
+        </div>
+    </div>
+</body>
+
+{% endblock content %}

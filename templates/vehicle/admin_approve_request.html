@@ -1,0 +1,39 @@
+{% extends 'vehicle/adminbase.html' %}
+{% block content %}
+
+<div class="row">
+	<div class="col-12 col-m-12 col-sm-12">
+		<div class="card-header">
+			<h3 style="font-size: 28px; text-align:center">
+				Подтверждение заявок 
+			</h3>
+
+		</div>
+		<div class="card-content">
+			<table>
+				<thead>
+					<tr>
+						<th>Машина</th>
+						<th>Номер</th>
+						<th>Описание проблемы</th>
+						<th>Подтвердить</th>
+
+					</tr>
+				</thead>
+				<tbody>
+					{% for r in enquiry %}
+					<tr>
+						<td> {{r.vehicle_name}}</td>
+						<td>{{r.vehicle_no}}</td>
+						<td>{{r.problem_description}}</td>
+						<td><a style="text-decoration:none;font-size:25px;"
+								href="{% url 'approve-request' r.id  %}">&#10004;</a></td>
+					</tr>
+					{% endfor %}
+
+				</tbody>
+			</table>
+		</div>
+	</div>
+</div>
+{% endblock content %}

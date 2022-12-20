@@ -1,0 +1,27 @@
+{% extends "vehicle/base.html" %}
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" type="text/css" href= "{% static "style.css" %}">
+</head>
+
+<body>
+
+  {% block content %}
+
+  {% include "vehicle/customer_servicesCards.html" %}
+
+  <hr></hr>
+  
+  {% include "vehicle/customer_loginToContinue.html" %}
+
+  {% endblock content %}
+
+
+</body>
+
+</html>

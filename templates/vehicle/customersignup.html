@@ -1,0 +1,31 @@
+{% extends "vehicle/base.html" %}
+<!DOCTYPE html>
+{% load widget_tweaks %}
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <title></title>
+</head>
+
+<body>
+    {% block content %}
+    <div class="form-page">
+        <form class="form" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <h1>Регистрация клиента</h1>
+            {% render_field userForm.first_name class="form-input" placeholder="Имя" %}
+            {% render_field userForm.last_name class="form-input" placeholder="Фамилия" %}
+            {% render_field userForm.username class="form-input" placeholder="Имя пользователя" %}
+            {% render_field userForm.password class="form-input" placeholder="Пароль" %}
+            {% render_field customerForm.address class="form-input" placeholder="Адрес" %}
+            {% render_field customerForm.mobile class="form-input" placeholder="Номер телефона" %}
+
+            <input class="submit-button" type="submit" value="Зарегистрироваться">
+
+        </form>
+    </div>
+    {% endblock content %}
+</body>
+
+</html>

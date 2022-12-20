@@ -1,0 +1,39 @@
+{% extends 'vehicle/adminbase.html' %}
+{% block content %}
+{% load static %}
+
+<div class="row">
+	<div class="col-12 col-m-12 col-sm-12">
+
+		<div class="card-header">
+			<h3 style="font-size: 28px; text-align:center">Зарплата
+			</h3>
+
+		</div>
+		<div class="card-content">
+			<table>
+				<thead>
+					<tr>
+						<th>Имя работника</th>
+						<th>Зарплата</th>
+						<th>Изменить зарплату</th>
+					</tr>
+				</thead>
+				<tbody>
+					{% for m in mechanics %}
+					<tr>
+						<td> {{m.get_name}}</td>
+
+						<td>{{m.salary}}</td>
+						<td><a style="text-decoration:none;font-size:25px;"
+								href="{% url 'update-salary' m.id  %}">&#9998;</a></td>
+					</tr>
+					{% endfor %}
+
+				</tbody>
+			</table>
+		</div>
+	</div>
+</div>
+
+{% endblock content %}
